@@ -1,0 +1,161 @@
+{% extends 'base3.html' %}
+
+{% block body %}
+
+
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">Post a Job</h1>
+                <div class="row g-4">
+                    <div class="col-md-6 d-flex align-items-stretch" style="max-width: 500px;">
+                        <img 
+                            class="img-fluid rounded shadow-sm" 
+                            src="../static/img/post_job.jpg" 
+                            alt="Illustration of a Job Posting" 
+                            style="object-fit: cover; height: 100%; width: 100%;">
+                    </div>
+                      
+        
+                    <div class="col-md-6">
+                        <form action="/post" method="POST" enctype="multipart/form-data">
+                            <div class="row g-3">
+                                <!-- Job Name -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="job_name" name="job_name" placeholder="Job Name" required>
+                                        <label for="job_name">Job Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-control" name="Job_cetegoray" id="Job_cetegoray" required>
+                                            <option value="" disabled selected>Select Job_cetegoray</option>
+                                            <option value="Customer Service">Customer Service</option>
+                                            <option value="Human Resource">Human Resource</option>
+                                            <option value="Project Management">Project Management</option>
+                                            <option value="Business Development">Business Development</option>
+                                            <option value="Sales & Communication">Sales & Communication</option>
+                                            <option value="Teaching & Education">Teaching & Education</option>
+                                            <option value="Design & Creative">Design & Creative</option>
+                                            <option value=" Marketing"> Marketing</option>
+                                        </select>
+                                    
+                                        <label for="Job_cetegoray">Job_cetegoray</label>
+                                    </div>
+                                </div>
+                               
+        
+                                <!-- Country Name -->
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <select class="form-control" id="country_name" name="country_name" required>
+                                            <option value="" disabled selected>Select Country</option>
+                                            <option value="Afghanistan">Afghanistan</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="Andorra">Andorra</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Argentina">Argentina</option>
+                                            <option value="Armenia">Armenia</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Austria">Austria</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="Belgium">Belgium</option>
+                                            <option value="Bhutan">Bhutan</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="China">China</option>
+                                            <option value="Denmark">Denmark</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="France">France</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="India">India</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="United States">United States</option>
+                                            <!-- Add more countries as needed -->
+                                        </select>
+                                        <label for="country_name">Country Name</label>
+                                    </div>
+                                </div>
+                                
+        
+                                <!-- Salary Range -->
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="min_salary" name="min_salary" placeholder="Min Salary" required>
+                                        <label for="min_salary">Min Salary</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="max_salary" name="max_salary" placeholder="Max Salary" required>
+                                        <label for="max_salary">Max Salary</label>
+                                    </div>
+                                </div>
+        
+                                <!-- Job Type -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-control" name="job_type" id="job_type" required>
+                                            <option value="" disabled selected>Select Job Type</option>
+                                            <option value="full_time">Full-Time</option>
+                                            <option value="part_time">Part-Time</option>
+                                            <option value="contract">Contract</option>
+                                            <option value="internship">Internship</option>
+                                        </select>
+                                        <label for="job_type">Job Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="Vacancy" name="Vacancy" placeholder="Vacancy" required>
+                                        <label for="Vacancy">Vacancy</label>
+                                    </div>
+                                </div>
+                                <!-- Job Description -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="job_description" name="job_description" placeholder="Job Description" style="height: 150px;" required></textarea>
+                                        <label for="job_description">Job Description</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="Responsibility" name="Responsibility" placeholder="Job Description" style="height: 150px;" required></textarea>
+                                        <label for="Responsibility">Responsibility</label>
+                                    </div>
+                                </div>
+        
+        
+                                <!-- Upload Logo -->
+                                <div class="col-12">
+                                    <label for="company_logo" class="form-label">Upload Company Logo</label>
+                                    <input class="form-control" type="file" id="company_logo" name="company_logo" accept="image/*" required>
+                                </div>
+        
+                                <!-- Perks and Benefits -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="Qualifications" name="Qualifications" placeholder="Qualifications" style="height: 100px;" required></textarea>
+                                        <label for="Qualifications">Qualifications</label>
+                                    </div>
+                                </div>
+        
+                                <!-- Submit Button -->
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Post Job</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact End -->
+
+
+        <!-- Footer Start -->
+        {% endblock body %}
